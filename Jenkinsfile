@@ -6,16 +6,17 @@ pipeline {
         jdk 'JDK 11'
     }
 
-    stages {
-        stage('Checkout') {
-            steps {
-                git credentialsId: 'github-token', url: 'git@github.com:sampeter-akan/credit-loan-calculator.git'
-            }
-        }
+    
 
-        stage('Build') {
-            steps {
-                sh 'mvn clean compile'
+    stage('Checkout') {
+    steps {
+        git url: 'https://github.com/sampeter-akan/credit-loan-calculator.git', branch: 'main', credentialsId: 'github-token'
+    }
+}
+
+    stage('Build') {
+    steps {
+        sh 'mvn clean compile'
             }
         }
 

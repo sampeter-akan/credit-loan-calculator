@@ -8,8 +8,8 @@ pipeline {
 
     stages {
         stage('Checkout') {
-        maven 'Default'
-        jdk 'Default'
+            steps {
+                git credentialsId: 'github-ssh-key', url: 'git@github.com:sampeter-akan/credit-loan-calculator.git'
             }
         }
 

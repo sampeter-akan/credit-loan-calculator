@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git credentialsId: 'github-ssh-key', url: 'git@github.com:sampeter-akan/credit-loan-calculator.git'
+                git credentialsId: 'github-token', url: 'git@github.com:sampeter-akan/credit-loan-calculator.git'
             }
         }
 

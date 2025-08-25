@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven 3.8.1'
-        jdk 'JDK 11'
+        maven 'Default'
+        jdk 'Default'
     }
 
     stages {
         stage('Checkout') {
-            steps {
-                git credentialsId: 'github-ssh-key', url: 'git@github.com:sampeter-akan/credit-loan-calculator.git'
+        maven 'Default'
+        jdk 'Default'
             }
         }
 

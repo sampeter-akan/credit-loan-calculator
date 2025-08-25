@@ -1,0 +1,12 @@
+# Ignore Maven build output
+/target/
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore logs
+*.log
+
+# Ignore OS files
+.DS_Store
+Thumbs.db

@@ -1,9 +1,7 @@
         stage('Deploy') {
-            steps {
-                script {
-                    if (env.BRANCH_NAME == 'main' || env.GIT_BRANCH == 'main') {
-                        sh 'mkdir -p /tmp/credit-loan-deploy && cp -r * /tmp/credit-loan-deploy/'
-                    }
+            script {
+                if (env.BRANCH_NAME == 'main' || env.GIT_BRANCH == 'main') {
+                    sh 'mkdir -p /tmp/credit-loan-deploy && cp -r * /tmp/credit-loan-deploy/'
                 }
             }
         }

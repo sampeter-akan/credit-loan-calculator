@@ -1,3 +1,12 @@
+        stage('Deploy') {
+            when {
+                branch 'main'
+            }
+            steps {
+                // Deploy to a local folder on the Jenkins server (change path as needed)
+                sh 'mkdir -p /tmp/credit-loan-deploy && cp -r * /tmp/credit-loan-deploy/'
+            }
+        }
 pipeline {
     agent any
 

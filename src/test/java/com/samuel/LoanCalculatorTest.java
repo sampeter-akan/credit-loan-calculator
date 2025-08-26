@@ -21,7 +21,9 @@ public class LoanCalculatorTest {
         options.addArguments("--user-data-dir=/tmp/chrome-" + System.currentTimeMillis());
 
         WebDriver driver = new ChromeDriver(options);
-        driver.get("file:///C:/Users/samue/Projects/credit-loan-calculator/index.html");
+
+        // Use a local web server for CI, or switch to file:// URL for local testing
+        driver.get("http://localhost:8000/index.html");
 
         // Basic check: page title contains expected text
         assert driver.getTitle().contains("Credit Loan Calculator");

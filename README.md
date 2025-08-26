@@ -33,6 +33,8 @@ This project is a Java-based web application for calculating credit loan values.
 	```sh
 	python3 -m http.server 8000
 	```
+- In CI/CD, the deployment stage copies all project files to `/tmp/credit-loan-deploy` on the Jenkins server after a successful build on the `main` branch.
+- You can find the deployed files in `/tmp/credit-loan-deploy` on the Jenkins server.
 - In a real deployment, copy the web files to your web server or hosting environment.
 
 ---
@@ -49,6 +51,7 @@ This project is a Java-based web application for calculating credit loan values.
 		 - Runs all tests (`mvn test`), including Selenium browser tests.
 	4. **Archive Logs:** Test logs are archived for review.
 	5. **Notify:** Jenkins outputs build status.
+	6. **Deploy:** Copies all project files to `/tmp/credit-loan-deploy` on the Jenkins server (local deployment for demonstration).
 - **Automation:** All steps are defined in the `Jenkinsfile` at the project root.
 
 ---

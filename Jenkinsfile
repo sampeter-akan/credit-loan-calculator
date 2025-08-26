@@ -1,10 +1,10 @@
         stage('Deploy') {
-            when {
-                branch 'main'
-            }
             steps {
-                // Deploy to a local folder on the Jenkins server (change path as needed)
-                sh 'mkdir -p /tmp/credit-loan-deploy && cp -r * /tmp/credit-loan-deploy/'
+                script {
+                    if (env.BRANCH_NAME == 'main' || env.GIT_BRANCH == 'main') {
+                        sh 'mkdir -p /tmp/credit-loan-deploy && cp -r * /tmp/credit-loan-deploy/'
+                    }
+                }
             }
         }
 pipeline {

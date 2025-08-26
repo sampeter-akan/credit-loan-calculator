@@ -21,6 +21,10 @@ pipeline {
 
         stage('Test') {
             steps {
+                // Start a local web server to serve index.html for Selenium tests
+                sh 'python3 -m http.server 8000 &'
+                // Wait a moment to ensure the server is up
+                sh 'sleep 3'
                 sh 'mvn test'
             }
             post {

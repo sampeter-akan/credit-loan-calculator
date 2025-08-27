@@ -75,6 +75,21 @@ This setup ensures visibility into test execution and application behavior, supp
 
 ---
 
+## Security Best Practices
+This project follows practical, transferable security guidelines:
+
+- **No Secrets in Code:** Never commit passwords, API keys, or sensitive data to the repository.
+- **.gitignore Usage:** Build artifacts, logs, and sensitive files are excluded from version control.
+- **Environment Variables:** Use environment variables for secrets and credentials in local and CI/CD environments.
+- **Secret Management:** For production, use tools like GitHub Secrets, Jenkins Credentials, or HashiCorp Vault.
+- **Automated Security Checks:** Use Maven plugins or GitHub Actions (e.g., Dependabot) to scan for vulnerable dependencies.
+- **Repository Hygiene:** Regularly remove large or unnecessary files and branches to stay within storage limits.
+- **Reporting Vulnerabilities:** Contributors should report security issues privately to the project maintainer.
+
+For more details or to contribute securely, see the SECURITY.md file (if present) or contact the maintainer.
+
+---
+
 ## Git CLI: Commit and Push Changes
 To save your changes and upload them to GitHub, use the following commands:
 

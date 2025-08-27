@@ -1,4 +1,3 @@
-
 # Credit Loan Calculator
 
 ## Project Overview
@@ -53,6 +52,46 @@ This project is a Java-based web application for calculating credit loan values.
 	5. **Notify:** Jenkins outputs build status.
 	6. **Deploy:** Copies all project files to `/tmp/credit-loan-deploy` on the Jenkins server (local deployment for demonstration).
 - **Automation:** All steps are defined in the `Jenkinsfile` at the project root.
+
+---
+
+## Logging and Monitoring
+The project integrates logging and monitoring using SLF4J and Logback:
+
+- **SLF4J/Logback Integration:**
+  - All test classes use SLF4J for structured logging.
+  - Logback is configured as the logging backend via Maven dependencies.
+- **Test Logging:**
+  - During test execution (including Selenium tests), log messages are generated for key actions and outcomes.
+  - Log output includes browser startup, page load, assertions, and test results.
+- **Monitoring in CI/CD:**
+  - Jenkins console output displays all log messages from SLF4J during build and test stages.
+  - Test logs are archived for review after each pipeline run.
+- **How to View Logs:**
+  - After running a Jenkins build, check the console output for SLF4J log entries.
+  - Archived test logs can be downloaded from Jenkins for detailed analysis.
+
+This setup ensures visibility into test execution and application behavior, supporting monitoring and troubleshooting.
+
+---
+
+## Git CLI: Commit and Push Changes
+To save your changes and upload them to GitHub, use the following commands:
+
+1. **Stage all changes:**
+   ```sh
+   git add .
+   ```
+2. **Commit with a message:**
+   ```sh
+   git commit -m "Update README with logging and monitoring section"
+   ```
+3. **Push to the remote repository:**
+   ```sh
+   git push origin main
+   ```
+
+Replace the commit message with a description of your changes as needed.
 
 ---
 

@@ -114,7 +114,7 @@ This project follows practical, transferable security guidelines:
 - **Repository Hygiene:** Regularly remove large or unnecessary files and branches to stay within storage limits.
 - **Reporting Vulnerabilities:** Contributors should report security issues privately to the project maintainer.
 
-For more details or to contribute securely, see the SECURITY.md file (if present) or contact the maintainer.
+For more details or to contribute securely, see the SECURITY.md file or contact the maintainer.
 
 ---
 
@@ -146,5 +146,8 @@ Replace the commit message with a description of your changes as needed.
 ---
 
 ## Contact
-- Project by: Samuel Peter
+- Project by: Samuel Peter MSc DevOps and Cloud Compuuting, IU International University of Applied Sciences
 - GitHub: https://github.com/sampeter-akan/credit-loan-calculator
+
+## Course DEVOPS
+- Tutor: Prof Dr. Lu, Tianxiang.

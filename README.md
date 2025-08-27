@@ -146,7 +146,7 @@ Replace the commit message with a description of your changes as needed.
 ---
 
 ## Contact
-- Project by: Samuel Peter MSc DevOps and Cloud Compuuting, IU International University of Applied Sciences
+- Project by: Samuel Peter MSc DevOps and Cloud Computing, IU International University of Applied Sciences
 - GitHub: https://github.com/sampeter-akan/credit-loan-calculator
 
 ## Course DEVOPS

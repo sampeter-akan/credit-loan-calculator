@@ -1,37 +1,65 @@
 # Credit Loan Calculator
 
-## Project Overview
-This project is a Java-based web application for calculating credit loan values. It uses Maven for build automation, Selenium for automated browser testing, and is managed with a professional CI/CD pipeline using Jenkins and GitHub.
+## Project Design: Knowledge Areas & Architecture
+This project is designed to demonstrate best practices in modern software engineering, focusing on the following knowledge areas:
+
+### 1. Plan Development and Agile Collaboration
+- **Agile Workflow:** The project uses an iterative, incremental approach with clear task breakdowns and regular feedback cycles.
+- **Version Control:** All code is managed in a private GitHub repository, supporting collaboration, code review, and traceability.
+- **Documentation:** The README and in-code comments provide clear guidance for contributors and users.
+
+### 2. Continuous Integration and Testing
+- **Automated Builds:** Maven automates compilation, dependency management, and packaging.
+- **Automated Testing:** JUnit and Selenium are used for unit and browser-based UI tests, ensuring code quality and regression prevention.
+- **CI Pipeline:** Jenkins is configured to automatically build and test the project on every push to the main branch.
+- **Test Reporting:** Test results and logs are archived for review after each pipeline run.
+
+### 3. Release Management and Deployment
+- **Release Process:** Each successful build on the main branch is a candidate for release.
+- **Deployment Automation:** The Jenkins pipeline includes a deployment stage that copies build artifacts to a designated directory (e.g., `/tmp/credit-loan-deploy`) for demonstration.
+- **Versioning:** Releases can be tagged in Git for traceability.
+
+### 4. Application Security
+- **Secure Development:** No secrets or sensitive data are committed to the repository.
+- **Environment Variables:** Credentials and secrets are managed outside of code, using environment variables or CI/CD secret stores.
+- **Dependency Management:** Maven ensures dependencies are up-to-date and free from known vulnerabilities (with tools like Dependabot).
+- **Access Control:** The repository and Jenkins are private and access-controlled.
+- **Security Documentation:** Security practices are documented in the README and (optionally) a SECURITY.md file.
+
+### 5. Monitoring and Logging
+- **Structured Logging:** SLF4J and Logback provide structured, centralized logging for all test and application events.
+- **Pipeline Monitoring:** Jenkins console output and archived logs enable real-time and historical monitoring of builds, tests, and deployments.
+- **Troubleshooting:** Log output is used to diagnose issues and verify application behavior.
 
 ---
 
 ## How to Build
 1. **Clone the repository:**
-	 ```sh
-	 git clone https://github.com/sampeter-akan/credit-loan-calculator.git
-	 cd credit-loan-calculator
-	 ```
+   ```sh
+   git clone https://github.com/sampeter-akan/credit-loan-calculator.git
+   cd credit-loan-calculator
+   ```
 2. **Build with Maven:**
-	 ```sh
-	 mvn clean compile
-	 ```
+   ```sh
+   mvn clean compile
+   ```
 
 ---
 
 ## How to Test
 - **Run all tests:**
-	```sh
-	mvn test
-	```
+   ```sh
+   mvn test
+   ```
 - Selenium tests are included and will run automatically. They use a headless Chrome browser and expect the app to be served at `http://localhost:8000/index.html`.
 
 ---
 
 ## How to Deploy (Example)
 - For demonstration, the app can be served locally:
-	```sh
-	python3 -m http.server 8000
-	```
+   ```sh
+   python3 -m http.server 8000
+   ```
 - In CI/CD, the deployment stage copies all project files to `/tmp/credit-loan-deploy` on the Jenkins server after a successful build on the `main` branch.
 - You can find the deployed files in `/tmp/credit-loan-deploy` on the Jenkins server.
 - In a real deployment, copy the web files to your web server or hosting environment.
@@ -42,15 +70,15 @@ This project is a Java-based web application for calculating credit loan values.
 - **Source Control:** GitHub (private repository)
 - **Continuous Integration:** Jenkins pulls code from GitHub on every push to `main`.
 - **Pipeline Steps:**
-	1. **Checkout:** Jenkins pulls the latest code from GitHub.
-	2. **Build:** Runs `mvn clean compile` to build the project.
-	3. **Test:**
-		 - Starts a local web server (`python3 -m http.server 8000 &`).
-		 - Waits a few seconds for the server to start.
-		 - Runs all tests (`mvn test`), including Selenium browser tests.
-	4. **Archive Logs:** Test logs are archived for review.
-	5. **Notify:** Jenkins outputs build status.
-	6. **Deploy:** Copies all project files to `/tmp/credit-loan-deploy` on the Jenkins server (local deployment for demonstration).
+   1. **Checkout:** Jenkins pulls the latest code from GitHub.
+   2. **Build:** Runs `mvn clean compile` to build the project.
+   3. **Test:**
+         - Starts a local web server (`python3 -m http.server 8000 &`).
+         - Waits a few seconds for the server to start.
+         - Runs all tests (`mvn test`), including Selenium browser tests.
+   4. **Archive Logs:** Test logs are archived for review.
+   5. **Notify:** Jenkins outputs build status.
+   6. **Deploy:** Copies all project files to `/tmp/credit-loan-deploy` on the Jenkins server (local deployment for demonstration).
 - **Automation:** All steps are defined in the `Jenkinsfile` at the project root.
 
 ---
